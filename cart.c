@@ -319,7 +319,8 @@ enum Program{
     DYNAMIC_STACK_TEST = 2,
     STATIC_DEQUE_TEST = 3,
     DYNAMIC_DEQUE_TEST = 4,
-    PROG_NEED_CHOICE = 5
+    CART_COLLECTOR = 5,
+    PROG_NEED_CHOICE = 6
 };
 
 enum StackOperation{
@@ -555,12 +556,13 @@ int main(void){
         printf("\t|  2. Dinamic stack      |\n");
         printf("\t|  3. Static deque       |\n");
         printf("\t|  4. Dinamic deque      |\n");
+        printf("\t|  5. Cart collector     |\n");
         printf("\t|  0. Exit               |\n");
         printf("\t--------------------------\n");
         printf("Select: ");
         scanf("%d", &choice);
 
-        if (choice < 0 || choice > 4) choice = 5;
+        if (choice < 0 || choice > 5) choice = 6;
         op = choice;
         
         switch(op){
@@ -579,6 +581,8 @@ int main(void){
                 break;
             case (DYNAMIC_DEQUE_TEST):
                 testDynamicDeque();
+                break;
+            case (CART_COLLECTOR):
                 break;
         }
         op = PROG_NEED_CHOICE;
